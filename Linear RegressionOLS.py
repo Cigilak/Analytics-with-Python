@@ -21,7 +21,7 @@ X = bos.drop('PRICE', axis = 1)
 
 X_train, X_test, Y_train, Y_test = sklearn.cross_validation.train_test_split(X, Y, test_size = 0.33, random_state = 5)
 X2 = sm.add_constant(X_train)
-est = sm.OLS(Y, X2)
+
 est = sm.OLS(Y_train, X2)
 est2 = est.fit()
 print(est2.summary())
