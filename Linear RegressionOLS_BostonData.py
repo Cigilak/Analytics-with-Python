@@ -25,3 +25,7 @@ X2 = sm.add_constant(X_train)
 est = sm.OLS(Y_train, X2)
 est2 = est.fit()
 print(est2.summary())
+# Linear regression with Sklearn
+lin_reg = LinearRegression()
+lin_reg.fit(X2, Y_train)
+lin_reg.intercept_ , lin_reg.coef_
