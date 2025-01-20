@@ -23,6 +23,18 @@ df.dropna()
 # backfill and frontfill data point
 df.bfill().ffill()
 
+# Assume that you have a date column with dates for a month. First element of a date grouping is filled and next 3 are empty with a string
+           date 
+0    2022-07-01
+1          -  
+2          -
+3          -
+4    2022-07-02
+#How will you clean this and ffill ? >> First convert the column into a date format >> Replace the string >> Front fill out the date column with ffill.
+df['date'] = pd.to_datetime(df['date'])
+df['date'] = df['date'].str.replace('-', '')
+df['date'].fillna(method='ffill', inplace=True)
+
 # drop multiple columns 
 df.drop(['Salary', 'Name'], axis=1, inplace=True)
 
