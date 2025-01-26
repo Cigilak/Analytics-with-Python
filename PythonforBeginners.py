@@ -8,3 +8,18 @@ for i in range(2000, 3201):
         l.append(str(i))
 
 print ','.join(l)
+
+
+##Define a class which has 2 methods. Once to get an input of string and the other to print the string in an upper case
+class objectString(self):
+    def __init__(self):
+        self.s = ""             #constructor
+    def getString(self):
+        self.s = input()        #method
+
+    def upperString(self):
+        print(self.s.upper())   #method
+
+strObj = objectString()
+strObj.getString()
+strObj.printString()
