@@ -95,3 +95,6 @@ df['Rank'] = df.groupby('Gender')['Salary'].transform(lambda x: x.rank(ascending
 
 filtered_df = df.groupby('Gender').filter(lambda x: x['Salary'].mean() >= 45000)
 print(filtered_df)
+
+# Get the unique values of 'Salary' column
+unique_values = df['Salary'].unique()
