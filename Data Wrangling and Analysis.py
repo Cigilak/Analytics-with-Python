@@ -98,3 +98,16 @@ print(filtered_df)
 
 # Get the unique values of 'Salary' column
 unique_values = df['Salary'].unique()
+
+# Clean your datatype in a dataframe
+def clean_data_types(df):
+    for col in df.columns:
+        if df[col].dtype == 'int64':
+            df[col] = df[col].astype('int32')
+        elif df[col].dtype == 'float64':
+            df[col] = df[col].astype('float32')
+        elif df[col].dtype == 'object':
+            # Replace NaN values with "null" for object type columns
+            df[col] = df[col].fillna("null")
+    return df
+
