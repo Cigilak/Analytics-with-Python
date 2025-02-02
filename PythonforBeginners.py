@@ -10,7 +10,7 @@ for i in range(2000, 3201):
 print ','.join(l)
 
 
-##Define a class which has 2 methods. One to get an input of string and the other to print the string in upper case
+###Define a class which has 2 methods. One to get an input of string and the other to print the string in upper case
 class objectString(self):
     def __init__(self):
         self.s = ""             #constructor
