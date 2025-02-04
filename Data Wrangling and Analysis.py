@@ -111,3 +111,6 @@ def clean_data_types(df):
             df[col] = df[col].fillna("null")
     return df
 
+#get null values from a dataframe
+
+df[pd.isnull(df['DATE'])]
