@@ -114,3 +114,18 @@ def clean_data_types(df):
 #get null values from a dataframe
 
 df[pd.isnull(df['DATE'])]
+
+
+# Aggregate Data and group it a function to calculate and map based on the function
+
+# Calculate airport costs
+def get_cost(type):
+    if type == 'large': 
+        return 90000 
+    elif type == 'medium': 
+        return 5000 
+    else: 
+        return 0 
+# Calculate airport operational costs. Aiport cost is based on the destination aipoirt. 
+df['COST'] = df['TYPE'].map(get_cost)
+
