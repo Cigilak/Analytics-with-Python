@@ -118,14 +118,21 @@ df[pd.isnull(df['DATE'])]
 
 # Aggregate Data and group it a function to calculate and map based on the function
 
-# Calculate airport costs
+# Calculate weighted indicators based on Department
 def get_cost(type):
-    if type == 'large': 
-        return 90000 
-    elif type == 'medium': 
+    if type == 'IT': 
+        return 4000 
+    elif type == 'HR': 
         return 5000 
     else: 
-        return 0 
-# Calculate airport operational costs. Aiport cost is based on the destination aipoirt. 
+        return 6000 
+# Calculate weighted indicator cost. 
 df['COST'] = df['TYPE'].map(get_cost)
 
+# Get median cost of each department per row in a dataframe and divide it by 2 
+avg_route_fares = (
+                        roundtrip_tickets.groupby('DEPARTMENT')['COST']
+                        .median()
+                        .div(2) # roundtrip/2
+                        .reset_index(name='MEDIAN_COST')
+                    )
