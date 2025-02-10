@@ -136,3 +136,5 @@ avg_route_fares = (
                         .div(2) # roundtrip/2
                         .reset_index(name='MEDIAN_COST')
                     )
+#Identify Null values in a dataframe column Salary
+df[pd.isnull(df['Salary'] )]
