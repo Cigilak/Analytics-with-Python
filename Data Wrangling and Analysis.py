@@ -138,3 +138,6 @@ avg_route_fares = (
                     )
 #Identify Null values in a dataframe column Salary
 df[pd.isnull(df['Salary'] )]
+#Comma separated values as input. Change it to a column list variable.
+
+Columns=[x for x in raw_input().split(',')]
