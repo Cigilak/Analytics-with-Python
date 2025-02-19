@@ -141,3 +141,5 @@ df[pd.isnull(df['Salary'] )]
 #Comma separated values as input. Change it to a column list variable.
 
 Columns=[x for x in raw_input().split(',')]
+# Handle Categorical data in datasframes
+df['TYPE'].astype('category')
