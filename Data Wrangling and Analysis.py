@@ -1,4 +1,4 @@
-#                Data Wrangling, Transformation, and Management
+#                Data Wrangling, Transformation, and Management.
 #  What it is: Data wrangling involves cleaning and organizing raw data into a more usable format. 
 #  Transformation includes changing data types, creating new features, handling missing values, etc.
 
